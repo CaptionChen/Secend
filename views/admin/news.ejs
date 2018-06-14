@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<link href="https://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="top">
+  <h3> 欢迎进入admin文章管理 </h3>
+</div>
+<div class="wrap">
+  <% include ./left.ejs %>
+  <div class="right">
+		  <button type="button" class="btn btn-info" >
+      
+      <a href="/admin/addnews" style="color:#fff">添加文章</a>
+      </button>
+       <table class="table">
+            <thead>
+                 <th>id</th>
+                 <th>标题</th>
+                 <th> 作者 </th>
+                 <th>时间</th>
+                 <th>配图</th>
+                 <th>操作</th>
+            </thead>
+            <tbody>
+            <% for(var i=0;i<news.length;i++){ %>
+                 <tr>
+                      <td><%= news[i].id %></td>
+                      <td><%= news[i].title %></td>
+                      <td><%= news[i].author %></td>
+                      <td><%= news[i].shijian %></td>
+                      <td><img width=40 src="/uploads/<%= news[i].pic %>" alt=""></td>
+                      <td><a href="/admin/upda?id=<%=news[i].id %>">编辑</a> <a href="/admin/dell?id=<%= news[i].id%>"> 删除 </a> </td>
+
+                 </tr>
+                 <% } %>
+            </tbody>
+
+
+       </table>
+
+
+  </div>
+
+
+
+</div>
+
+
+<style>
+ *{
+    margin: 0;
+    padding: 0;
+
+ }
+ ul{
+ 	list-style: none;
+ }
+ a{
+ 	text-decoration: none;
+ }
+.top{
+	height: 50px;
+	background: #ff0;
+}
+.wrap{
+	 height: 100%;
+}
+.wrap .left{
+   padding-top:20px;
+   padding-left:30px;
+   border-right: 1px solid #000;
+   height: 100%;
+}
+.wrap .left ul >li{
+    height: 30px;
+    line-height: 30px;
+
+
+}  
+.wrap .left ul >li a{
+ color:#000;
+
+}
+.wrap .right{
+   float: left;
+   padding-left:30px;
+   padding-top:20px;
+
+}
+
+</style>
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+<h1>修改信息</h1>
+
+
+<form action="/admin/update" method="post">
+  <p>
+              <span>
+                分类名称
+              </span>
+    <input type="text" name="cname" value="<%=cate1.catename%>">
+    <input type="hidden" name="id" value="<%=cate1.id%>">
+  </p>
+  <p>
+    <input type="submit">
+  </p>
+
+</form>
+
+
+
+
+
+
+  </body>
+</html>

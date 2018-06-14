@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<link href="https://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/javascripts/jquery-3.1.1.min.js" ></script>
+    <script src="/javascripts/jqPaginator.js" ></script>
+
+</head>
+<body>
+<div class="top">
+  <h3> 欢迎进入admin文章管理 </h3>
+</div>
+<div class="wrap">
+  <% include ./left.ejs %>
+  <div class="right">
+		  <!--<button type="button" class="btn btn-info" >-->
+      <!-- -->
+      <!--<a href="/admin/addnews" style="color:#fff">添加文章</a>-->
+      <!--</button>-->
+       <table class="table">
+            <thead>
+                 <th>id</th>
+                 <th>标题</th>
+                 <th> 作者 </th>
+                 <th>时间</th>
+                 <th>配图</th>
+                 <th>操作</th>
+            </thead>
+            <tbody id="tt">
+
+            </tbody>
+
+
+       </table>
+      <ul id="p1" class="pagination"></ul>
+
+      <script>
+          $.jqPaginator('#p1', {
+              totalPages: 7,
+              visiblePages: 2,
+              currentPage: 1,
+              first: '<li class="first"><a href="javascript:void(0);">首页</a></li>',
+              prev: '<li class="prev"><a href="javascript:void(0);">上一页</a></li>',
+              next: '<li class="next"><a href="javascript:void(0);">下一页</a></li>',
+              last: '<li class="last"><a href="javascript:void(0);">最后一页</a></li>',
+              page: '<li class="page"><a href="javascript:void(0);">{{page}}</a></li>',
+              onPageChange: function (num, type) {
+              console.log(num);
+                  $.ajax({
+                      url:'/admin/page',
+                      type:'get',
+                      data:{p:num},
+                      success:function(data){
+                          console.log(data);
+                          $("#tt").empty();
+                          $.each(data.list,function(k,v){
+                              console.log(v);
+                              var tr=$("<tr>");
+                              tr.append($("<td>").text(v.id));
+                              tr.append($("<td>").text(v.title));
+                              tr.append($("<td>").text(v.author));
+                              tr.append($("<td>").text(v.shijian));
+                              tr.append($("<td>"+"<img width=40 src='/yourpath/1001367237992517632.png' alt=''>"+$('</td>')));
+                              tr.append($("<td>").append("<a href='/admin/news'>编辑</a>"));
+                              tr.append($("<td>").append("<a href='/admin/news'>删除</a>"));
+                              $("#tt").append(tr);
+                          })
+                      }
+
+                  })
+              }
+          });
+
+
+      </script>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<style>
+ *{
+    margin: 0;
+    padding: 0;
+
+ }
+ ul{
+ 	list-style: none;
+ }
+ a{
+ 	text-decoration: none;
+ }
+.top{
+	height: 50px;
+	background: #ff0;
+}
+.wrap{
+	 height: 100%;
+}
+.wrap .left{
+   padding-top:20px;
+   padding-left:30px;
+   border-right: 1px solid #000;
+   height: 100%;
+}
+.wrap .left ul >li{
+    height: 30px;
+    line-height: 30px;
+
+
+}  
+.wrap .left ul >li a{
+ color:#000;
+
+}
+.wrap .right{
+   float: left;
+   padding-left:30px;
+   padding-top:20px;
+
+}
+
+</style>
+
+
+</body>
+</html>

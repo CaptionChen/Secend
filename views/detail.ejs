@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<link rel="stylesheet" href="/libs/bootstrap.min.css"/>
+	<!--[if lt IE 9]>
+	<script src="/libs/html5shiv.min.js"></script>
+	<script src="/libs/respond.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="/libs/quckly.css"/>
+	<link rel="stylesheet" href="/libs/fenlei.css"/>
+	<link rel="stylesheet" href="/libs/home.css"/>
+</head>
+<body>
+	 <% include ./top.ejs %>
+
+
+
+
+
+
+
+
+
+
+	 <!--内容-->
+	 <div class="container">
+		 <!--左边-->
+		 <% for(var i = 0;i < arts.length;i++){ %>
+		 <div class="heart_left">
+			 <div class="jin">
+				 <span>咨讯</span>
+				 &gt;
+				 <span><%= arts[i].id %></span>
+				 &gt;
+				 <span>正文</span>
+			 </div>
+			 <!--标题、-->
+			 <h2><%= arts[i].title %></h2>
+			 <!--作者-->
+			 <div class="jin">
+				 <span><%= arts[i].id %></span>
+				 &nbsp;
+
+				 <span><%= arts[i].author %></span>
+
+				 &nbsp;
+				 <span><%= arts[i].shijian %></span>
+			 </div>
+			 <div class="content_">
+				 <%- arts[i].content %>
+			 </div>
+			 <div class="renturn">
+				 <a href="#">返回决胜网首页&nbsp;&gt;&gt;</a>
+			 </div>
+			 <!--作者版权保护-->
+    <span>
+        来源：红黄蓝教育机构 ，如若转载，请注明出处。
+    </span>
+    <span>
+        “看完这篇文章觉得还不够？如果您关注教育行业产业链上下游动态发展，善于发现业内具备创新与机遇的公司和产品，亦或是能对行业政策及市场变化进行深入解读，那就快给我们投稿吧，投稿邮箱是：tougao@juesheng.com，您的来稿或许就会影响教育未来！”
+    </span>
+			 <ul class="foot_list">
+				 <li><a href="#">新闻</a></li>
+				 <li><a href="#">红黄蓝幼儿园</a></li>
+				 <li><a href="#">教育安全</a></li>
+				 <li><a href="#">幼儿教育</a></li>
+			 </ul>
+			 <div>
+				 <ul class="foot_">
+					 <li><span>2</span>&nbsp;赞</li>
+					 <li>收藏</li>
+				 </ul>
+			 </div>
+			 <!--结尾 相关内容-->
+			 <br/>
+			 <br/>
+			 <br/>
+			 <br/>
+			 <span>相关内容</span>
+			 <br/>
+			 <br/>
+			 <br/>
+			 <ul class="liulan">
+				 <li>
+					 <div>
+					 <img src="img/tu1.jpg" alt=""/>
+					 </div>
+					 <span>学前教育是事关亿万家庭的民生大事，强化幼儿安全防护更是幼儿保教红黄蓝已合安全管</span>
+				 </li>
+				 <li>
+					 <div>
+					 <img src="img/tu1.jpg" alt=""/>
+					 </div>
+					 <span>学前教育是事关亿万家庭的民生大事，强化幼儿安全防护更是幼儿保教红黄蓝已合安全管</span>
+				 </li>
+				 <li>
+					 <div>
+					 <img src="img/tu1.jpg" alt=""/>
+					 </div>
+					 <span>学前教育是事关亿万家庭的民生大事，强化幼儿安全防护更是幼儿保教红黄蓝已合安全管</span>
+				 </li>
+				 <li>
+					 <div>
+					 <img src="img/tu1.jpg" alt=""/>
+					 </div>
+					 <span>学前教育是事关亿万家庭的民生大事，强化幼儿安全防护更是幼儿保教红黄蓝已合安全管</span>
+				 </li>
+				 <li>
+					 <div>
+					 <img src="img/tu1.jpg" alt=""/>
+					 </div>
+					 <span>学前教育是事关亿万家庭的民生大事，强化幼儿安全防护更是幼儿保教红黄蓝已合安全管</span>
+				 </li>
+				 <li>
+					 <div>
+					 <img src="img/tu1.jpg" alt=""/>
+					 </div>
+					 <span>学前教育是事关亿万家庭的民生大事，强化幼儿安全防护更是幼儿保教红黄蓝已合安全管</span>
+				 </li>
+
+			 </ul>
+
+
+
+		 </div>
+
+
+		 <%}%>
+
+
+
+		 <!--右边-->
+		 <div class="heart_right">
+			 <img src="img/tu2.jpg" style="width: 240px;height: 145px;" alt=""/>
+			 <span class="jian">最新推荐</span>
+			 <ul class="heart_right_list">
+				 <li>教育部辟谣：未接到设置中国胸痛大学申请</li>
+				 <li>教育部辟谣：未接到设置中国胸痛大学申请</li>
+				 <li>教育部辟谣：未接到设置中国胸痛大学申请</li>
+				 <li>教育部辟谣：未接到设置中国胸痛大学申请</li>
+			 </ul>
+
+			 <span class="jian">相似问答</span>
+			 <ul class="heart_right_list">
+				 <li>
+					 <span class="quation">北京红舞鞋加盟费多少</span>
+					 <span class="ansss">1人回答</span>
+				 </li>
+				 <li>
+					 <span class="quation">北京红舞鞋加盟费多少</span>
+					 <span class="ansss">1人回答</span>
+				 </li>
+				 <li>
+					 <span class="quation">北京红舞鞋加盟费多少</span>
+					 <span class="ansss">1人回答</span>
+				 </li>
+				 <li>
+					 <span class="quation">北京红舞鞋加盟费多少</span>
+					 <span class="ansss">1人回答</span>
+				 </li>
+
+			 </ul>
+
+			 <img id="scooll" src="img/tu1.jpg" alt=""/>
+
+
+
+
+
+
+
+		 </div>
+	 </div>
+	 <!--固定定位-->
+	 <div class="left">
+		 <span>分享</span>
+		 <img src="/img/tu1.jpg" alt=""/>
+		 <img src="/img/tu2.jpg" alt=""/>
+		 <img src="/img/tu1.jpg" alt=""/>
+	 </div>
+	 <script src="/libs/jquery.min.js"></script>
+	 <script src="/libs/bootstrap.min.js"></script>
+	 <script>
+		 var headin=document.getElementById("scooll");
+		 var ding=document.getElementsByClassName("left")[0];
+		 window.onscroll = function () {
+			 ofo = document.body.scrollTop || document.documentElement.scrollTop;
+			 if (ofo > 850) {
+				 headin.style.position = "fixed";
+				 headin.style.top = 0;
+				 headin.style.right = '130px';
+				 headin.style.zIndex = "1000";
+				 ding.style.position="fixed";
+				 ding.style.top="200px";
+				 ding.style.left="50px";
+			 } else {
+				 headin.style.position = "";
+				 headin.style.top = "";
+				 headin.style.left = "";
+				 ding.style.position="";
+				 ding.style.bottom="";
+				 ding.style.right="";
+			 }
+
+
+			 console.log(ofo);
+		 };
+
+	 </script>
+	 <% include ./foot.ejs %>
+</body>
+</html>

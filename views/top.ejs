@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/libs/bootstrap.min.css"/>
+    <!--[if lt IE 9]>
+    <script src="/libs/html5shiv.min.js"></script>
+    <script src="/libs/respond.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="/libs/quckly.css"/>
+    <link rel="stylesheet" href="/libs/fenlei.css"/>
+    <link rel="stylesheet" href="/libs/home.css"/>
+</head>
+<body>
+
+
+<!--头部-->
+<!--顶上-->
+<div class="headler">
+    <div class="container">
+        <ul class="headler_l">
+            <li><a href="#">决胜网首页</a></li>
+            <li><a href="#" style="color:red">咨讯</a></li>
+            <li><a href="#">互联网+</a></li>
+            <li><a href="#">职教圈</a></li>
+            <li><a href="#">素质教育</a></li>
+            <li><a href="#">创业</a></li>
+            <li><a href="#">专家专栏</a></li>
+            <li><a href="#">问答</a></li>
+            <li><a href="#">商城</a></li>
+        </ul>
+        <ul class="headler_r">
+            <li>
+                <% if(isLogin==0){ %>
+                <a href="/login">登录</a>
+                <%}else{%>
+                <span>欢迎&nbsp;<%= user.username %>&nbsp;大人!</span>
+                <a href="/logout">退出登录</a>
+                <%}%>
+            </li>
+            <li><a href="#">投稿</a></li>
+            <li style="border:1px solid red;width: 76px;height: 24px;border-radius: 24px;text-align: center;line-height: 23px"><a href="#">寻求报道</a></li>
+        </ul>
+    </div>
+</div>
+<!--搜索、商标-->
+<div class="container">
+    <div style="position: relative;">
+        <img class="logo" src="img/logo.png" alt=""/>
+
+    </div>
+    <div style="position: relative;">
+        <div class="news">
+            <span>2005年5月30日，互联网著作权行政保护办法施行</span>
+        </div>
+    </div>
+
+
+
+    <div class="seach">
+        <input class="content" type="text"/>
+        <input class="head_btn" type="button" value="搜索"/>
+    </div>
+</div>
+<!--分类导航-->
+<div class="tiao">
+    <div class="container">
+        <ul class="fenlei">
+            <li style="border:none;">首页</li>
+            <!--<li>热点速递</li>-->
+            <!--<li>决胜腔调</li>-->
+            <!--<li>教育大数据</li>-->
+            <!--<li>教育大数据</li>-->
+            <!--<li>图说</li>-->
+            <!--<li>资料库</li>-->
+            <% for(var i=0;i<cate.length;i++){ %>
+
+            <li> <a href="/list?cid=<%= cate[i].id %>"><%= cate[i].catename %></a> </li>
+            <% } %>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>

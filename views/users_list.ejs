@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <link href="https://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+
+      }
+      ul{
+        list-style: none;
+      }
+      a{
+        text-decoration: none;
+      }
+      .top{
+        height: 50px;
+        background: #ff0;
+      }
+      .wrap{
+        height: 100%;
+      }
+      .wrap .left{
+        padding-top:20px;
+        padding-left:30px;
+        border-right: 1px solid #000;
+        height: 100%;
+      }
+      .wrap .left ul >li{
+        height: 30px;
+        line-height: 30px;
+
+
+      }
+      .wrap .left ul >li a{
+        color:#000;
+
+      }
+      .wrap .right{
+        float: left;
+        padding-left:30px;
+        padding-top:20px;
+
+      }
+
+    </style>
+  </head>
+  <body>
+  <div class="top">
+    <h3> 欢迎进入admin文章管理 </h3>
+  </div>
+  <div class="wrap">
+    <% include ./admin/left.ejs %>
+  <table cellspacing="0"  bgcolor="aqua" cellpadding="1" border="1" align="center" valign="center">
+    <tr>
+      <th>id</th>
+      <th>姓名</th>
+      <th>密码</th>
+      <th>重置密码</th>
+      <th>邮箱</th>
+      <th>操作</th>
+      <th>操作</th>
+    </tr>
+    <% for(var i=0;i<users.length;i++){%>
+    <tr align="center">
+      <td><%=users[i].id%></td>
+      <td><%=users[i].username%></td>
+      <td><%=users[i].pass%></td>
+      <td><%=users[i].pass1%></td>
+      <td><%=users[i].email%></td>
+      <td><a href="/emid?id=<%=users[i].id%>">update</a></td>
+      <td><a href="/del?id=<%=users[i].id%>">delete</a></td>
+    </tr>
+    <% }%>
+
+  </table>
+
+</div>
+
+
+
+
+  </body>
+</html>

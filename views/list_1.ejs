@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="libs/bootstrap.min.css"/>
+    <!--[if lt IE 9]>
+    <script src="libs/html5shiv.min.js"></script>
+    <script src="libs/respond.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="libs/quckly.css"/>
+    <link rel="stylesheet" href="libs/fenlei.css"/>
+    <link rel="stylesheet" href="libs/home.css"/>
+    <script src="/javascripts/jquery-3.1.1.min.js" ></script>
+    <script src="/javascripts/jqPaginator.js" ></script>
+</head>
+<body>
+<% include ./top.ejs %>
+
+<div class="container">
+
+    <!--左边-->
+    <div class="heart_left" id="tt"></div>
+    <!--右边-->
+    <div class="heart_right">
+        <p><span class="jian">热点速递</span>
+            <br/>
+            <span class="heart_right_small">相关文章：232323篇</span></p>
+
+
+        <span class="jian">最新推荐</span>
+        <ul class="heart_right_list">
+            <li>教育部辟谣：未接到设置中国胸痛大学申请</li>
+            <li>教育部辟谣：未接到设置中国胸痛大学申请</li>
+            <li>教育部辟谣：未接到设置中国胸痛大学申请</li>
+            <li>教育部辟谣：未接到设置中国胸痛大学申请</li>
+        </ul>
+
+        <span class="jian">相似问答</span>
+        <ul class="heart_right_list">
+            <li>
+                <span class="quation">北京红舞鞋加盟费多少</span>
+                <span class="ansss">1人回答</span>
+            </li>
+            <li>
+                <span class="quation">北京红舞鞋加盟费多少</span>
+                <span class="ansss">1人回答</span>
+            </li>
+            <li>
+                <span class="quation">北京红舞鞋加盟费多少</span>
+                <span class="ansss">1人回答</span>
+            </li>
+            <li>
+                <span class="quation">北京红舞鞋加盟费多少</span>
+                <span class="ansss">1人回答</span>
+            </li>
+        </ul>
+    </div>
+
+
+    <ul id="p1" class="pagination" style="float:left;margin:50px 200px;"></ul>
+
+
+    <script>
+
+        console.log(window.location.href.length);
+        console.log(window.location.href);
+        console.log(window.location.href.slice(31,window.location.href.length));
+        $.jqPaginator('#p1', {
+            totalPages: 7,
+            visiblePages: 2,
+            currentPage: 1,
+            first: '<li class="first"><a href="javascript:void(0);">首页</a></li>',
+            prev: '<li class="prev"><a href="javascript:void(0);">上一页</a></li>',
+            next: '<li class="next"><a href="javascript:void(0);">下一页</a></li>',
+            last: '<li class="last"><a href="javascript:void(0);">最后一页</a></li>',
+            page: '<li class="page"><a href="javascript:void(0);">{{page}}</a></li>',
+            onPageChange: function (num, type) {
+                console.log(num);
+                var cid=window.location.href.slice(31,window.location.href.length)
+                $.ajax({
+                    url:'/page',
+                    type:'get',
+                    data:{p:num,cid:cid},
+                    success:function(data){
+                        console.log(data);
+                        $("#tt").empty();
+                        $.each(data.list,function(k,v){
+                            console.log(v);
+//                            console.log(k);
+                            var d=$("<div>").addClass('fication_left')
+                            var d1=$("<div>").addClass('fication')
+                            d1.append($("<div>").addClass('fication_block')
+                                    .append($(" <img>").attr({src:'/uploads/'+v.pic+''})
+                                            .css({"width":"250px",'height':'150px'})))
+                            d1.append($("<h4>")
+                                    .addClass('fication_biaoti')
+                                    .append($("<a>"+v.title+"</a>").attr({ href:'/detail?id='+v.id+''})))
+                            d1.append($("<div>").addClass('over').text(''+v.zhaiyao+''))
+                            d1.append($("<ul>").addClass('fication_list')
+                                    .append($("<li>")
+                                            .css({"border":"1px solid green",
+                                                "borderRadius":"20px",
+                                                "color":"green"})
+                                            .text(''+v.author+''))
+                                    .append($("<li>")
+                                            .append($("<a>"+v.author+"</a>").attr({ href:'/detail?id='+v.id+''})))
+                                    .append($("<li>").text(''+v.id+''))
+                                    .append($("<li>")
+                                            .append($("<a>"+v.author+"</a>").attr({ href:'/detail?id='+v.id+''})))
+                                    .append($("<li>").text(""+v.shijian+"")))
+                            d.append(d1)
+                            $("#tt").prepend(d)
+                        })
+                    }
+
+                })
+            }
+        });
+
+    </script>
+
+</div>
+
+
+</body>
+</html>

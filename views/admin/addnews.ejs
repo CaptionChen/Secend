@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<link href="https://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+     <!-- 配置文件 -->
+    <script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
+    <!-- 编辑器源码文件 -->
+    <script type="text/javascript" src="/ueditor/ueditor.all.js"></script>
+</head>
+<body>
+<div class="top">
+  <h3> 欢迎进入admin文章管理 </h3>
+</div>
+<div class="wrap">
+  <% include ./left.ejs %>
+  <div class="right">
+      <h3> 添加文章 </h3>
+
+      <form action="/admin/insertnews" enctype="multipart/form-data"  method="post">
+          <p>
+              <span>
+                文章标题
+              </span>
+              <input type="text" name="title">
+          </p>
+          <p>
+              <span>
+                作者
+              </span>
+              <input type="text" name="author" >
+          </p>
+          <p>
+              <span>
+                分类
+              </span>
+              <select name="cid" id="" >
+                     <% for(var i=0;i<cate.length;i++){  %>
+
+                      <option value="<%= cate[i].id %>"> <%= cate[i].catename %> </option>
+
+
+                      <% } %>
+              </select>
+          </p>
+           <p>
+              <span>
+                摘要
+              </span>
+              <textarea name="zhaiyao" id="" cols="30" rows="10" ></textarea>
+          </p>
+             <p>
+              <span>
+                时间
+              </span>
+              <input type="text" name="shijian"  >
+          </p>
+              <p>
+              <span>
+                图片
+              </span>
+              <input type="file" name="pic" >
+          </p>
+           <p>
+              <span>
+                内容
+              </span>
+                      <!-- 加载编辑器的容器 -->
+            <script id="container" style="width: 800px;height: 400px" name="content" type="text/plain" >
+                这里写你的初始化内容
+            </script>
+          </p>
+          <p>
+             <input type="submit">
+          </p>
+
+      </form>
+
+  </div>
+
+
+<script>
+var ue = UE.getEditor('container');
+
+
+</script>
+</div>
+
+
+<style>
+ *{
+    margin: 0;
+    padding: 0;
+
+ }
+ ul{
+ 	list-style: none;
+ }
+ a{
+ 	text-decoration: none;
+ }
+.top{
+	height: 50px;
+	background: #ff0;
+}
+.wrap{
+	 height: 100%;
+}
+.wrap .left{
+   padding-top:20px;
+   padding-left:30px;
+   border-right: 1px solid #000;
+   height: 100%;
+}
+.wrap .left ul >li{
+    height: 30px;
+    line-height: 30px;
+
+
+}  
+.wrap .left ul >li a{
+ color:#000;
+
+}
+.wrap .right{
+   float: left;
+   padding-left:30px;
+   padding-top:20px;
+
+}
+
+</style>
+
+
+</body>
+</html>

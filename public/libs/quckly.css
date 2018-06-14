@@ -1,0 +1,292 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+a:hover{
+    text-decoration: none;
+}
+.headler {
+    width: 100%;
+    height: 37px;
+    font-size: 13px;
+    background-color: #fcfcfc;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.headler_l {
+    list-style: none;
+    float: left;
+}
+
+.headler_l li {
+    float: left;
+    margin: 8px 10px;
+
+}
+
+.headler_l li a {
+    color: #000;
+}
+
+.headler_r li {
+    float: right;
+    margin: 5px 10px;
+    list-style: none;
+    line-height: 23px;
+}
+
+.headler_r li a {
+    color: red;
+}
+
+.seach {
+    width: 360px;
+    height: 80px;
+    float: right;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+.content {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    height: 40px;
+    width: 270px;
+    border: 1px solid #EDEDED;
+}
+
+.head_btn {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    height: 40px;
+    width: 90px;
+    border: none;
+    background-color: #F8AE57;
+}
+
+.tiao {
+    width: 100%;
+    height: 46px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 45px;
+    background-color: #EF6730;
+}
+
+.fenlei {
+    list-style: none;
+}
+
+.fenlei li {
+    float: left;
+    width: 130px;
+    height: 46px;
+    color: #fff;
+    border-left: 1px solid #FcFcFc;
+
+}
+.fenlei li a{
+    color:#fff;
+}
+.fenlei li a:hover{
+    text-decoration: none;
+}
+
+.fenlei li:hover {
+    background-color: #F8AE57;
+    cursor: pointer;
+}
+
+.jin {
+    color: #A1A1A1;
+}
+
+.renturn {
+    width: 150px;
+    height: 23px;
+    font-size: 16px;
+    border: 1px dashed blue;
+}
+
+.foot_list li {
+    float: left;
+    padding: 0 10px;
+    list-style: none;
+    font-size: 15px;
+    border-left: 1px solid #EF6730;
+}
+
+.foot_list li a {
+    color: #EF6730;
+}
+
+.foot_list {
+    margin: 0 0 70px 0;
+}
+
+.foot_ li {
+    list-style: none;
+    float: left;
+    border: 1px solid #EF6730;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;;
+    width: 190px;
+    height: 43px;
+    font-size: 18px;
+    color: #EF6730;
+    text-align: center;
+    line-height: 43px;
+    margin: 0 20px;
+}
+
+.foot_ li:hover {
+    background-color: #EF6730;
+    color: #fff;
+}
+
+.foot_ {
+    margin: 0 0 0 100px;
+}
+
+.liulan li {
+    list-style: none;
+    float: left;
+    width: 236px;
+    height: 211px;
+    margin: 5px;
+    overflow: hidden;
+
+}
+
+.liulan li img {
+    height: 142px;
+    width: 235px;
+    transition: all 1s;
+}
+.liulan li>div{
+    height: 142px;
+    width: 235px;
+    overflow: hidden;
+}
+.liulan li img:hover {
+    transform: scale(1.2);
+}
+
+.heart_left {
+    width: 743px;
+    float: left;
+}
+
+.heart_right {
+    width: 270px;
+    float: right;
+}
+
+.jian {
+    color: #EF6730;
+    display: inline-block;
+    font-size: 18px;
+    margin: 30px 0 16px 0;
+}
+
+.heart_right_list li {
+    width: 250px;
+    height: 60px;
+    font-size: 14px;
+    padding: 10px 0;
+    list-style: none;
+    border-top: 1px solid #EBEBEB;
+}
+
+.heart_right_list li:hover {
+    color: #EF6730;
+}
+
+.quation {
+    float: left;
+}
+
+.ansss {
+    float: right;
+    color: #ACACAC;
+}
+
+.content_ {
+    font-size: 18px;
+}
+
+.left {
+    position: absolute;
+    top: 200px;
+    left: 50px;
+    width: 50px;
+    height: 150px;
+    text-align: center;
+    font-size: 16px;
+}
+
+#foot li {
+    list-style: none;
+    float: left;
+    font-size: 12px;
+    border-left: 1px solid #000;
+    margin: 0 5px;
+    padding: 0 10px;
+}
+
+#foot_ {
+    width: 100%;
+    height: auto;
+    margin: 0 20px;
+    background-color: gainsboro;
+}
+
+#foot_ p {
+    float: left;
+}
+
+#fff {
+    margin: 0 auto;
+    width: 700px;
+    height: 90px;
+    text-align: center;
+}
+
+img:hover {
+    opacity: 0.8;
+}
+
+.news {
+    width: auto;
+    height: 30px;
+    position: absolute;
+    top: 20px;
+    left: 250px;
+    text-align: center;
+    color: #F16623;
+    cursor: pointer;
+    line-height: 30px;
+}
+.left img{
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    display:block;
+    margin:8px;
+}
+
+

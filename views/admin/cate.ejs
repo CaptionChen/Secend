@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<link href="https://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="top">
+  <h3> 欢迎进入admin文章管理 </h3>
+</div>
+<div class="wrap">
+ <div class="left" style="width:100px;float: left;">
+  <ul>
+  	<li><a href="/admin/cate"> 分类管理 </a></li>
+  	<li><a href="/admin/news"> 文章管理 </a></li>
+  	<li><a href=""> 用户管理 </a></li>
+  	<li><a href=""> 评论管理 </a></li>
+  	<li><a href=""> 友情链接管理 </a></li>
+  </ul>
+
+
+ </div>
+  <div class="right">
+		  <button type="button" class="btn btn-info" >
+      
+      <a href="/admin/addcate" style="color:#fff">添加分类</a>
+      </button>
+       <table class="table">
+            <thead>
+                 <th>id</th>
+                 <th>分类名称</th>
+                 <th> 修改 </th>
+                 <th> 删除 </th>
+            </thead>
+            <tbody>
+            <% for(var i=0;i<cate.length;i++){ %>
+                 <tr>
+                      <td><%= cate[i].id %></td>
+                      <td><%= cate[i].catename %></td>
+                      <td> <a href="/admin/read?id=<%= cate[i].id%>">编辑</a> </td>
+                      <td> <a href="/admin/del?id=<%=cate[i].id%>">删除</a> </td>
+                 </tr>
+                 <% } %>
+            </tbody>
+
+
+       </table>
+
+
+  </div>
+
+
+
+</div>
+
+
+<style>
+ *{
+    margin: 0;
+    padding: 0;
+
+ }
+ ul{
+ 	list-style: none;
+ }
+ a{
+ 	text-decoration: none;
+ }
+.top{
+	height: 50px;
+	background: #ff0;
+}
+.wrap{
+	 height: 100%;
+}
+.wrap .left{
+   padding-top:20px;
+   padding-left:30px;
+   border-right: 1px solid #000;
+   height: 100%;
+}
+.wrap .left ul >li{
+    height: 30px;
+    line-height: 30px;
+
+
+}  
+.wrap .left ul >li a{
+ color:#000;
+
+}
+.wrap .right{
+   float: left;
+   padding-left:30px;
+   padding-top:20px;
+
+}
+
+</style>
+
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+.fication_left{
+    float:left;
+}
+.fication{
+    width: 743px;
+    height: 150px;
+}
+.fication_block{
+    float:left;
+    overflow: hidden;
+    margin:0 10px 0 0;
+}
+.over{
+    width: 480px;
+    height: 45px;
+    float:left;
+    /*margin:0 0 0 10px;*/
+    font-size: 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /*white-space: nowrap;*/
+    color:#676767;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.fication_list li{
+    list-style: none;
+    float:left;
+    width: 80px;
+    color:#676767;
+    text-align: center;
+    height: 20px;
+
+    margin:40px 0 0 5px;
+}
+.fication_list li a:hover{
+    color:#EF6730;
+    text-decoration: none;
+}
+.fication_biaoti:hover{
+    color:#EF6730;
+}
+.heart_right_small{
+    color:#676767;
+    font-size:12px;
+}
+.fication_block img:hover{
+    transform: scale(1.2);
+    opacity: 1;
+}
+.fication_block img{
+    transition:all 1s;
+}
+
+
+
+
+
+
+

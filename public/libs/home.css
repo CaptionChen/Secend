@@ -1,0 +1,120 @@
+.home_left{
+    width: 760px;
+    height: auto;
+    float:left;
+    margin:10px 0;
+}
+.area1{
+    width: 760px;
+    height: 275px;
+}
+.rotation{
+    width: 540px;
+    height: 270px;
+    float:left;
+}
+.rotation img{
+    width: 540px;
+    height: 270px;
+}
+.lun_right{
+    float:right;
+    width: 200px;
+    height: 130px;
+    margin:0 0 7px  0;
+    position: relative;
+}
+.lun_right img{
+    width:226px;
+    height: 126px;
+}
+.lun_right_text{
+    position: absolute;
+    bottom:0;
+    left:0;
+    width: 200px;
+    height: 25px;
+    color:#fff;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.oration{
+    width: 340px;
+    height: auto;
+    float:left;
+    margin:0 15px;
+}
+.text{
+    width:auto;
+    height: auto;
+}
+.text:hover{
+    color:#FF6702;
+}
+.oration_conent{
+    margin:10px 0;
+    width:auto;
+    height:90px;
+}
+.oration_head{
+    width: 340px;
+    height: 50px;
+    font-size:20px;
+    line-height: 50px;
+    border-bottom: 2px solid #FF6702;
+}
+.more{
+    float:right;
+    font-size: 12px;
+    color:#9A9A9A;
+}
+.fl{
+    float:left;
+    width:150px;
+    height: 90px;
+    overflow: hidden;
+    margin-right:10px;
+}
+.oration_list li{
+    list-style: none;
+    float:left;
+    width: auto;
+    height: 20px;
+    color:#9A9A9A;
+    margin:10px 3px;
+    padding:0 5px;
+}
+
+/*»¥ÁªÍø+*/
+.interner{
+    width: 100%;
+    height: auto;
+    float:left;
+}
+.interner .oration_head{
+    width: 100%;
+}
+.oration_conent_{
+    margin:10px 0;
+    display:block;
+    width: 100%;
+    height: 120px;
+}
+.oration_list_ li{
+    list-style: none;
+    float:left;
+    width: 40px;
+    height: 20px;
+    color:#9A9A9A;
+    margin:40px 10px;
+}
+.block_ img:hover{
+    transform: scale(1.2);
+}
+img{
+    transition: all 1s;
+}
+
+
+
+
